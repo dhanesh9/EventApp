@@ -1,6 +1,6 @@
 # PIN-Kings EventApp
 
-PIN-Kings is a platform for discovering and organizing events led by top community leaders, personal trainers, coaches, and creators. The application features a Next.js web frontend and a FastAPI backend, orchestrated through Docker Compose with PostgreSQL and Redis services.
+PIN-Kings is a platform for discovering and organizing events led by top community leaders, personal trainers, coaches, and creators. The application features a Next.js web frontend and a FastAPI backend.
 
 ## Monorepo Layout
 
@@ -10,25 +10,57 @@ PIN-Kings is a platform for discovering and organizing events led by top communi
 - `infra`: Infrastructure and deployment tooling such as Docker Compose.
 - `.github/workflows`: Continuous integration workflows.
 
-## Getting Started
+## Getting Started (Local Development)
 
-1. Ensure Docker and Docker Compose are installed.
-2. Copy `.env.example` files (to be added) and configure environment variables as needed.
-3. Run the stack locally with:
+Running the stack no longer requires Docker. Each application can be started locally with the usual dev tooling.
+
+### Prerequisites
+
+- Node.js 18+
+- npm 9+
+- Python 3.11+
+- [uvicorn](https://www.uvicorn.org/) (installed automatically with the API dependencies)
+
+### Install dependencies
 
 ```bash
-docker compose up --build
+# Install frontend dependencies
+cd apps/web
+npm install
+
+# (Optional) install backend dependencies in a virtualenv
+cd ../../apps/api
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .[dev]
 ```
 
-The web app will be available at http://localhost:3000 and the API at http://localhost:8080.
+### Run the applications
+
+From the repository root you can start the web app with a single command:
+
+```bash
+npm run dev
+```
+
+This forwards to `apps/web` and starts the Next.js dev server at http://localhost:3000.
+
+To run the FastAPI backend locally:
+
+```bash
+cd apps/api
+uvicorn app.main:app --reload
+```
+
+The API will be available at http://localhost:8000 and exposes a `/health` endpoint.
 
 ## Tech Stack
 
 - **Frontend**: Next.js (React, TypeScript)
 - **Backend**: FastAPI, SQLAlchemy, Alembic
-- **Database**: PostgreSQL
-- **Cache/Queue**: Redis
-- **Infrastructure**: Docker Compose
+- **Database**: PostgreSQL (planned)
+- **Cache/Queue**: Redis (planned)
+- **Infrastructure**: Docker Compose (for future containerized deployments)
 - **Testing**: Jest & React Testing Library (web), Pytest (API)
 
 ## Status
