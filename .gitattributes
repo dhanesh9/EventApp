@@ -1,0 +1,9 @@
+# Prefer the branch being merged/rebased (e.g., Codex) for these files
+README.md     merge=ours
+package-lock.json merge=ours
+pnpm-lock.yaml   merge=ours
+yarn.lock        merge=ours
+
+# If Codex mostly owns frontend/backend paths, you can do:
+apps/web/**   merge=ours
+apps/api/**   merge=ours
