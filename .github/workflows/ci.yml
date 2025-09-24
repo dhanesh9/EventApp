@@ -21,6 +21,7 @@ jobs:
           npm install
           npm run lint --if-present
           npm test --if-present
+          npm run build
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -28,5 +29,5 @@ jobs:
       - name: Install API dependencies
         working-directory: apps/api
         run: |
-          pip install .
-          pytest || true
+          pip install -e .[dev]
+          pytest
