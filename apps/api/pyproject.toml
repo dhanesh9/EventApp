@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pin_kings_api"
+version = "0.1.0"
+description = "FastAPI backend for the PIN-Kings EventApp"
+requires-python = ">=3.11"
+authors = [{ name = "PIN-Kings", email = "team@pin-kings.app" }]
+dependencies = [
+    "fastapi>=0.103.0",
+    "uvicorn[standard]>=0.23.0",
+    "sqlalchemy>=2.0.20",
+    "alembic>=1.11.0",
+    "psycopg[binary]>=3.1.9",
+    "python-dotenv>=1.0.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "httpx>=0.25.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
