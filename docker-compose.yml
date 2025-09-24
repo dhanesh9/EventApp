@@ -1,0 +1,48 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: pin-kings-db
+    environment:
+      POSTGRES_DB: pin_kings
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: pin-kings-redis
+    ports:
+      - "6379:6379"
+
+  api:
+    build:
+      context: ./apps/api
+    container_name: pin-kings-api
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8080 --reload
+    environment:
+      DATABASE_URL: postgresql+psycopg://postgres:postgres@db:5432/pin_kings
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - redis
+
+  web:
+    build:
+      context: ./apps/web
+    container_name: pin-kings-web
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8080
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+
+volumes:
+  db_data:
