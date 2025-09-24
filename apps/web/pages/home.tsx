@@ -32,7 +32,8 @@ const events: Event[] = [
     date: 'Sat, Apr 27 · 9:30 AM',
     location: 'The Social Lab · Austin, TX',
     category: 'Leadership',
-    description: 'Interactive sessions with neighborhood organizers sharing their playbooks for thriving, inclusive communities.',
+    description:
+      'Interactive sessions with neighborhood organizers sharing their playbooks for thriving, inclusive communities.',
   },
   {
     id: 3,
@@ -48,7 +49,8 @@ const events: Event[] = [
     date: 'Sun, May 5 · 8:00 AM',
     location: 'Barton Creek Greenbelt · Austin, TX',
     category: 'Outdoors',
-    description: 'Join the fastest-growing mountain biking club for an intermediate-friendly ride followed by a community brunch.',
+    description:
+      'Join the fastest-growing mountain biking club for an intermediate-friendly ride followed by a community brunch.',
   },
   {
     id: 5,
