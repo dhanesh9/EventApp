@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - EventHub</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-calendar-alt"></i> EventHub</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Browse Events</a>
+                <a href="/create-event.html" class="nav-link">Create Event</a>
+                <a href="#" class="nav-link">My Events</a>
+                <a href="#" class="nav-link">Login</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Event Header -->
+    <section class="event-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Home</a> > <a href="#">Events</a> > <span id="event-breadcrumb">Event Details</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details -->
+    <section class="event-details">
+        <div class="container">
+            <div class="event-main">
+                <div class="event-content">
+                    <div class="event-image">
+                        <img id="event-image" src="/images/default-event.svg" alt="Event Image">
+                        <div class="event-badge" id="event-category">Technology</div>
+                    </div>
+                    
+                    <div class="event-info">
+                        <h1 id="event-title">Loading Event...</h1>
+                        
+                        <div class="event-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span id="event-date">Loading...</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span id="event-time">Loading...</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span id="event-location">Loading...</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-users"></i>
+                                <span id="event-attendees">0 attendees</span>
+                            </div>
+                        </div>
+
+                        <div class="event-description">
+                            <h3>About This Event</h3>
+                            <div id="event-description-content">
+                                <p>Loading event description...</p>
+                            </div>
+                        </div>
+
+                        <div class="event-organizer">
+                            <h3>Organizer</h3>
+                            <div class="organizer-info">
+                                <div class="organizer-avatar">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="organizer-details">
+                                    <h4 id="organizer-name">Loading...</h4>
+                                    <p id="organizer-bio">Event organizer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event-tags">
+                            <h3>Tags</h3>
+                            <div class="tags-container" id="event-tags">
+                                <!-- Tags will be loaded dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-sidebar">
+                    <div class="booking-card">
+                        <div class="price-info">
+                            <span class="price" id="event-price">Free</span>
+                        </div>
+                        
+                        <div class="attendance-info">
+                            <div class="attendance-item">
+                                <span class="count" id="going-count">0</span>
+                                <span class="label">Going</span>
+                            </div>
+                            <div class="attendance-item">
+                                <span class="count" id="interested-count">0</span>
+                                <span class="label">Interested</span>
+                            </div>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button class="btn btn-primary btn-full" id="attend-btn">
+                                <i class="fas fa-check"></i> Attend Event
+                            </button>
+                            <button class="btn btn-outline btn-full" id="interested-btn">
+                                <i class="fas fa-heart"></i> Interested
+                            </button>
+                        </div>
+
+                        <div class="share-event">
+                            <h4>Share this event</h4>
+                            <div class="share-buttons">
+                                <button class="share-btn facebook" data-platform="facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </button>
+                                <button class="share-btn twitter" data-platform="twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+                                <button class="share-btn linkedin" data-platform="linkedin">
+                                    <i class="fab fa-linkedin"></i>
+                                </button>
+                                <button class="share-btn copy" data-platform="copy">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <h3>Event Location</h3>
+                        <div class="location-info">
+                            <p id="location-address">Loading address...</p>
+                            <div class="map-placeholder">
+                                <i class="fas fa-map"></i>
+                                <p>Map View</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Events -->
+    <section class="related-events">
+        <div class="container">
+            <h2>Similar Events</h2>
+            <div class="events-grid" id="related-events-grid">
+                <!-- Related events will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calendar-alt"></i> EventHub</h3>
+                    <p>Your premier destination for discovering and creating amazing events.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Arts & Culture</a></li>
+                        <li><a href="#">Sports & Fitness</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EventHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/event-details.js"></script>
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event - EventHub</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-calendar-alt"></i> EventHub</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Browse Events</a>
+                <a href="#" class="nav-link active">Create Event</a>
+                <a href="#" class="nav-link">My Events</a>
+                <a href="#" class="nav-link">Login</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="/">Home</a> > <span>Create Event</span>
+            </div>
+            <h1>Create Your Event</h1>
+            <p>Share your event with thousands of potential attendees</p>
+        </div>
+    </section>
+
+    <!-- Create Event Form -->
+    <section class="create-event">
+        <div class="container">
+            <div class="form-container">
+                <form id="create-event-form" class="event-form">
+                    <!-- Basic Information -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-info-circle"></i> Basic Information</h2>
+                        
+                        <div class="form-group">
+                            <label for="event-title">Event Title *</label>
+                            <input type="text" id="event-title" name="title" required 
+                                   placeholder="Give your event a catchy title">
+                            <div class="form-error" id="title-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-description">Event Description *</label>
+                            <textarea id="event-description" name="description" rows="6" required
+                                      placeholder="Describe what your event is about, what attendees can expect, and why they should attend"></textarea>
+                            <div class="form-error" id="description-error"></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="event-category">Category *</label>
+                                <select id="event-category" name="category" required>
+                                    <option value="">Select a category</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="business">Business</option>
+                                    <option value="arts">Arts & Culture</option>
+                                    <option value="sports">Sports & Fitness</option>
+                                    <option value="food">Food & Drink</option>
+                                    <option value="music">Music</option>
+                                    <option value="education">Education</option>
+                                    <option value="health">Health & Wellness</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="form-error" id="category-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="event-type">Event Type *</label>
+                                <select id="event-type" name="type" required>
+                                    <option value="">Select event type</option>
+                                    <option value="in-person">In-Person</option>
+                                    <option value="online">Online</option>
+                                    <option value="hybrid">Hybrid</option>
+                                </select>
+                                <div class="form-error" id="type-error"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Date and Time -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-calendar-alt"></i> Date & Time</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="event-date">Event Date *</label>
+                                <input type="date" id="event-date" name="date" required>
+                                <div class="form-error" id="date-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="event-time">Start Time *</label>
+                                <input type="time" id="event-time" name="time" required>
+                                <div class="form-error" id="time-error"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="event-duration">Duration (hours)</label>
+                                <input type="number" id="event-duration" name="duration" min="0.5" max="24" step="0.5"
+                                       placeholder="2">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="event-timezone">Timezone</label>
+                                <select id="event-timezone" name="timezone">
+                                    <option value="EST">Eastern Time (EST)</option>
+                                    <option value="CST">Central Time (CST)</option>
+                                    <option value="MST">Mountain Time (MST)</option>
+                                    <option value="PST">Pacific Time (PST)</option>
+                                    <option value="UTC">UTC</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-map-marker-alt"></i> Location</h2>
+                        
+                        <div class="form-group" id="venue-section">
+                            <label for="event-venue">Venue Name</label>
+                            <input type="text" id="event-venue" name="venue" 
+                                   placeholder="e.g., Conference Center, Community Hall">
+                        </div>
+
+                        <div class="form-group" id="address-section">
+                            <label for="event-address">Address *</label>
+                            <input type="text" id="event-address" name="address" required
+                                   placeholder="Full address or online meeting link">
+                            <div class="form-error" id="address-error"></div>
+                        </div>
+
+                        <div class="form-row" id="location-details">
+                            <div class="form-group">
+                                <label for="event-city">City *</label>
+                                <input type="text" id="event-city" name="city" required>
+                                <div class="form-error" id="city-error"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="event-state">State/Province</label>
+                                <input type="text" id="event-state" name="state">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-dollar-sign"></i> Pricing</h2>
+                        
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="free-event" name="isFree">
+                                <label for="free-event">This is a free event</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="price-section">
+                            <label for="event-price">Ticket Price ($)</label>
+                            <input type="number" id="event-price" name="price" min="0" step="0.01"
+                                   placeholder="0.00">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="max-attendees">Maximum Attendees</label>
+                            <input type="number" id="max-attendees" name="maxAttendees" min="1"
+                                   placeholder="Leave empty for unlimited">
+                        </div>
+                    </div>
+
+                    <!-- Additional Details -->
+                    <div class="form-section">
+                        <h2><i class="fas fa-cogs"></i> Additional Details</h2>
+                        
+                        <div class="form-group">
+                            <label for="event-tags">Tags</label>
+                            <input type="text" id="event-tags" name="tags" 
+                                   placeholder="networking, startup, tech, meetup (separate with commas)">
+                            <small>Add relevant tags to help people find your event</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-image">Event Image URL</label>
+                            <input type="url" id="event-image" name="image" 
+                                   placeholder="https://example.com/image.jpg">
+                            <small>Add an attractive image to make your event stand out</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="organizer-name">Organizer Name *</label>
+                            <input type="text" id="organizer-name" name="organizer" required
+                                   placeholder="Your name or organization">
+                            <div class="form-error" id="organizer-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-email">Contact Email *</label>
+                            <input type="email" id="contact-email" name="email" required
+                                   placeholder="contact@example.com">
+                            <div class="form-error" id="email-error"></div>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline" id="preview-btn">
+                            <i class="fas fa-eye"></i> Preview Event
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Create Event
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Preview Panel -->
+            <div class="preview-panel" id="preview-panel">
+                <div class="preview-header">
+                    <h3>Event Preview</h3>
+                    <button class="close-preview" id="close-preview">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="preview-content" id="preview-content">
+                    <!-- Preview will be generated here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-calendar-alt"></i> EventHub</h3>
+                    <p>Your premier destination for discovering and creating amazing events.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Arts & Culture</a></li>
+                        <li><a href="#">Sports & Fitness</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EventHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-check-circle"></i> Event Created Successfully!</h3>
+            </div>
+            <div class="modal-body">
+                <p>Your event has been created and is now live. People can start discovering and registering for your event.</p>
+                <div class="modal-actions">
+                    <button class="btn btn-primary" id="view-event-btn">View Event</button>
+                    <button class="btn btn-outline" id="create-another-btn">Create Another Event</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/create-event.js"></script>
+</body>
+</html>
