@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Coaches - PIN-Kings</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/search.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">
+        <!-- ... navigation content ... -->
+    </nav>
+
+    <main>
+        <div class="search-container">
+            <!-- Filters Section -->
+            <aside class="filters-sidebar">
+                <h3>Filters</h3>
+                
+                <!-- Medal Tier Filter -->
+                <div class="filter-group">
+                    <h4>Medal Tier</h4>
+                    <div class="filter-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="medal" value="crown"> Crown Kings
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="medal" value="gold"> Gold
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="medal" value="silver"> Silver
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="medal" value="bronze"> Bronze
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Distance Filter -->
+                <div class="filter-group">
+                    <h4>Distance</h4>
+                    <div class="filter-options">
+                        <label class="radio-label">
+                            <input type="radio" name="distance" value="1"> Within 1 km
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="distance" value="5"> Within 5 km
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="distance" value="10"> Within 10 km
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Price Range Filter -->
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <div class="filter-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="price" value="free"> Free
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="price" value="low"> ₹ (Under 500)
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="price" value="medium"> ₹₹ (500-2000)
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="price" value="high"> ₹₹₹ (2000+)
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Availability Filter -->
+                <div class="filter-group">
+                    <h4>Availability</h4>
+                    <div class="filter-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="availability" value="morning"> Morning
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="availability" value="afternoon"> Afternoon
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="availability" value="evening"> Evening
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="availability" value="weekend"> Weekends
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Results Section -->
+            <section class="search-results">
+                <div class="results-header">
+                    <h2>Tech & Innovation Coaches</h2>
+                    <div class="results-controls">
+                        <select class="sort-select">
+                            <option value="best">Best Match</option>
+                            <option value="rating">Highest Rated</option>
+                            <option value="distance">Nearest First</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                        </select>
+                        <div class="view-toggle">
+                            <button class="active"><i class="fas fa-th-large"></i></button>
+                            <button><i class="fas fa-list"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Coach Cards -->
+                <div class="coach-grid">
+                    <!-- Sample Coach Card 1 -->
+                    <div class="coach-card">
+                        <div class="coach-card-header">
+                            <img src="https://via.placeholder.com/300" alt="Coach" class="coach-image">
+                            <div class="coach-medal crown">
+                                <i class="fas fa-crown"></i> Crown King
+                            </div>
+                        </div>
+                        <div class="coach-card-body">
+                            <h3>Alex Kumar</h3>
+                            <p class="coach-specialty">Full Stack Development</p>
+                            <div class="coach-stats">
+                                <span><i class="fas fa-star"></i> 4.9 (127)</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 1.2 km</span>
+                                <span><i class="fas fa-users"></i> 450+ taught</span>
+                            </div>
+                            <div class="coach-tags">
+                                <span>MERN Stack</span>
+                                <span>Python</span>
+                                <span>System Design</span>
+                            </div>
+                            <div class="coach-price">
+                                <span>₹2000</span> / session
+                            </div>
+                            <div class="coach-actions">
+                                <button class="btn-primary">View Profile</button>
+                                <button class="btn-secondary"><i class="fas fa-bookmark"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more sample coach cards here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="/js/search.js"></script>
+</body>
+</html>

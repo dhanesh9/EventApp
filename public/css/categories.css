@@ -1,0 +1,206 @@
+/* Category Color Variables */
+:root {
+    --health-primary: #2ecc71;
+    --health-glow: rgba(46, 204, 113, 0.2);
+    --tech-primary: #3498db;
+    --tech-glow: rgba(52, 152, 219, 0.2);
+    --sports-primary: #e67e22;
+    --sports-glow: rgba(230, 126, 34, 0.2);
+    --arts-primary: #9b59b6;
+    --arts-glow: rgba(155, 89, 182, 0.2);
+    --growth-primary: #1abc9c;
+    --growth-glow: rgba(26, 188, 156, 0.2);
+    --business-primary: #f1c40f;
+    --business-glow: rgba(241, 196, 15, 0.2);
+}
+
+/* Category Strip Styles */
+.category-strip {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.category-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    width: 150px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-tile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    z-index: 0;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.category-tile:hover::before {
+    opacity: 1;
+}
+
+.category-tile i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.category-tile span {
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Category-specific styles */
+.category-health::before {
+    background: var(--health-glow);
+}
+.category-health i {
+    color: var(--health-primary);
+}
+
+.category-tech::before {
+    background: var(--tech-glow);
+}
+.category-tech i {
+    color: var(--tech-primary);
+}
+
+.category-sports::before {
+    background: var(--sports-glow);
+}
+.category-sports i {
+    color: var(--sports-primary);
+}
+
+.category-arts::before {
+    background: var(--arts-glow);
+}
+.category-arts i {
+    color: var(--arts-primary);
+}
+
+.category-growth::before {
+    background: var(--growth-glow);
+}
+.category-growth i {
+    color: var(--growth-primary);
+}
+
+.category-business::before {
+    background: var(--business-glow);
+}
+.category-business i {
+    color: var(--business-primary);
+}
+
+/* Category Dropdown Styles */
+.category-dropdown-container {
+    position: relative;
+}
+
+.category-dropdown {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250px;
+    z-index: 1000;
+    display: none;
+    padding: 1rem 0;
+}
+
+.category-dropdown.active {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-item i {
+    font-size: 1.2rem;
+}
+
+/* Category Labels */
+.category-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    gap: 0.5rem;
+}
+
+/* Medal Variations */
+.medal-health {
+    background: linear-gradient(45deg, var(--health-primary), #27ae60);
+}
+
+.medal-tech {
+    background: linear-gradient(45deg, var(--tech-primary), #2980b9);
+}
+
+.medal-sports {
+    background: linear-gradient(45deg, var(--sports-primary), #d35400);
+}
+
+.medal-arts {
+    background: linear-gradient(45deg, var(--arts-primary), #8e44ad);
+}
+
+.medal-growth {
+    background: linear-gradient(45deg, var(--growth-primary), #16a085);
+}
+
+.medal-business {
+    background: linear-gradient(45deg, var(--business-primary), #f39c12);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .category-strip {
+        gap: 1rem;
+    }
+
+    .category-tile {
+        width: 120px;
+        padding: 1rem;
+    }
+
+    .category-tile i {
+        font-size: 1.5rem;
+    }
+}

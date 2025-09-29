@@ -1,47 +1,151 @@
-<!DOCTYPE html>
+N<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EventHub - Find & Create Amazing Events</title>
+    <title>PIN-Kings - Connect with Local Community Leaders</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/new-home.css">
+    <link rel="stylesheet" href="/css/medals.css">
+    <link rel="stylesheet" href="/css/navigation.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Add Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
+        <div class="nav-logo">
+            <h2><i class="fas fa-crown"></i> PIN-Kings</h2>
+        </div>
         <div class="nav-container">
-            <div class="nav-logo">
-                <h2><i class="fas fa-calendar-alt"></i> EventHub</h2>
-            </div>
             <div class="nav-menu" id="nav-menu">
-                <a href="#" class="nav-link active">Home</a>
-                <a href="#" class="nav-link">Browse Events</a>
-                <a href="#" class="nav-link">Create Event</a>
-                <a href="#" class="nav-link">My Events</a>
-                <a href="#" class="nav-link">Login</a>
+                <a href="/" class="nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link">Explore <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="/search.html?category=health" class="dropdown-item"><i class="fas fa-heart"></i> Health & Wellbeing</a>
+                        <a href="/search.html?category=tech" class="dropdown-item"><i class="fas fa-microchip"></i> Tech & Innovation</a>
+                        <a href="/search.html?category=sports" class="dropdown-item"><i class="fas fa-running"></i> Sports & Coaching</a>
+                        <a href="/search.html?category=arts" class="dropdown-item"><i class="fas fa-palette"></i> Arts & Creativity</a>
+                        <a href="/search.html?category=growth" class="dropdown-item"><i class="fas fa-seedling"></i> Personal Growth</a>
+                        <a href="/search.html?category=business" class="dropdown-item"><i class="fas fa-briefcase"></i> Business & Networking</a>
+                    </div>
+                </div>
+                <a href="/become-coach.html" class="nav-link">Become a Coach</a>
+                <a href="/my-activities.html" class="nav-link">My Activities</a>
+                <a href="/shortlist.html" class="nav-link"><i class="fas fa-bookmark"></i> Shortlist</a>
+                <button class="btn btn-primary login-btn">Login</button>
             </div>
             <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Discover Amazing Events Near You</h1>
-            <p>Find local events, meetups, and activities that match your interests</p>
+            <h1>What do you want to learn today? 👑</h1>
             <div class="search-container">
-                <div class="search-box">
-                    <input type="text" id="search-input" placeholder="Search for events...">
-                    <input type="text" id="location-input" placeholder="Location">
+                <div class="search-pill">
+                    <select id="category-dropdown" class="search-category-dropdown">
+                        <option value="">Browse Categories</option>
+                        <option value="health">Health & Wellbeing</option>
+                        <option value="tech">Tech & Innovation</option>
+                        <option value="sports">Sports & Coaching</option>
+                        <option value="arts">Arts & Creativity</option>
+                        <option value="growth">Personal Growth</option>
+                        <option value="business">Business & Networking</option>
+                    </select>
+                    <input type="text" id="search-input" class="expandable-search" placeholder="gym trainer, yoga, guitar, python, public speaking...">
+                    <input type="text" id="location-input" placeholder="Enter Pin Code">
                     <button id="search-btn" class="btn btn-primary">
-                        <i class="fas fa-search"></i> Search
+                        <i class="fas fa-search"></i> Find My Coach
                     </button>
                 </div>
+            </div>
+            
+            <!-- Featured Coaches Section -->
+            <div class="featured-coaches">
+                <h2>Top Rated Coaches Near You</h2>
+                <div class="coach-carousel owl-carousel owl-theme">
+                    <!-- 10 Example Coaches (showing category in .specialty) -->
+                    <div class="coach-card">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Coach Mike"><div class="rating"><i class="fas fa-star"></i><span>4.9</span></div></div>
+                        <div class="coach-info"><h3>Mike Anderson</h3><p class="specialty">Fitness</p><div class="badges"><span class="badge"><i class="fas fa-medal"></i> Elite</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</p></div>
+                    </div>
+
+                    <div class="coach-card">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Coach Emily"><div class="rating"><i class="fas fa-star"></i><span>4.8</span></div></div>
+                        <div class="coach-info"><h3>Emily Chen</h3><p class="specialty">Tech</p><div class="badges"><span class="badge"><i class="fas fa-award"></i> Top Rated</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> Palo Alto, CA</p></div>
+                    </div>
+
+                    <div class="coach-card">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Coach David"><div class="rating"><i class="fas fa-star"></i><span>4.9</span></div></div>
+                        <div class="coach-info"><h3>David Martinez</h3><p class="specialty">Tennis</p><div class="badges"><span class="badge"><i class="fas fa-shield-alt"></i> Pro</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> Los Angeles, CA</p></div>
+                    </div>
+
+                    <div class="coach-card">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Coach Sarah"><div class="rating"><i class="fas fa-star"></i><span>4.7</span></div></div>
+                        <div class="coach-info"><h3>Sarah Williams</h3><p class="specialty">Yoga</p><div class="badges"><span class="badge"><i class="fas fa-medal"></i> Elite</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> Santa Monica, CA</p></div>
+                    </div>
+
+                    <div class="coach-card">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Coach John"><div class="rating"><i class="fas fa-star"></i><span>4.8</span></div></div>
+                        <div class="coach-info"><h3>John Peterson</h3><p class="specialty">Business</p><div class="badges"><span class="badge"><i class="fas fa-award"></i> Top Rated</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> San Jose, CA</p></div>
+                    </div>
+
+                    <div class="coach-card">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/women/52.jpg" alt="Coach Lisa"><div class="rating"><i class="fas fa-star"></i><span>4.9</span></div></div>
+                        <div class="coach-info"><h3>Lisa Chang</h3><p class="specialty">Dance</p><div class="badges"><span class="badge"><i class="fas fa-shield-alt"></i> Pro</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> Berkeley, CA</p></div>
+                    </div>
+
+                    <div class="coach-card">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Coach Robert"><div class="rating"><i class="fas fa-star"></i><span>4.8</span></div></div>
+                        <div class="coach-info"><h3>Robert Wilson</h3><p class="specialty">Life Coaching</p><div class="badges"><span class="badge"><i class="fas fa-medal"></i> Elite</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> Palo Alto, CA</p></div>
+                    </div>
+
+                    <div class="coach-card">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/women/62.jpg" alt="Coach Maria"><div class="rating"><i class="fas fa-star"></i><span>4.9</span></div></div>
+                        <div class="coach-info"><h3>Maria Rodriguez</h3><p class="specialty">Language</p><div class="badges"><span class="badge"><i class="fas fa-award"></i> Top Rated</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> San Diego, CA</p></div>
+                    </div>
+
+                    <div class="coach-card">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/92.jpg" alt="Coach James"><div class="rating"><i class="fas fa-star"></i><span>4.7</span></div></div>
+                        <div class="coach-info"><h3>James Thompson</h3><p class="specialty">Basketball</p><div class="badges"><span class="badge"><i class="fas fa-shield-alt"></i> Pro</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> Sacramento, CA</p></div>
+                    </div>
+
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard removed (carousel replaced by Featured Coaches) -->
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <!-- Events View -->
+        <div id="events-view" class="view-content active">
+            <div class="events-grid">
+                <!-- Event cards will be dynamically populated -->
+            </div>
+        </div>
+
+        <!-- Leaders View -->
+        <div id="leaders-view" class="view-content">
+            <div class="leaders-grid">
+                <!-- Leader cards will be dynamically populated -->
             </div>
         </div>
     </section>
@@ -160,6 +264,7 @@
         <div class="spinner"></div>
     </div>
 
-    <script src="/js/main.js"></script>
+    <script src="/js/new-home.js"></script>
+    <script src="/js/medals.js"></script>
 </body>
 </html>

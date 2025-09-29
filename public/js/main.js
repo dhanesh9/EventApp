@@ -89,6 +89,8 @@ class EventApp {
                 });
             });
         }
+
+        // Carousel initialization moved to public/js/new-home.js (initTopCoachesCarousel)
     }
 
     async loadEvents() {
