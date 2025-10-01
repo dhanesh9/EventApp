@@ -410,3 +410,11 @@ const additionalStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = additionalStyles;
 document.head.appendChild(styleSheet);
+
+// Category navigation function
+function handleCategorySelection(category) {
+    if (category) {
+        // Navigate to the specific category page
+        window.location.href = `/categories/${category}.html`;
+    }
+}

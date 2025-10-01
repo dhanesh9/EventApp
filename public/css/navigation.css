@@ -94,9 +94,10 @@
     align-items: center;
 }
 
-/* Make sure the login button sits visually at the corner */
+/* Make sure the auth buttons sit visually at the corner */
+.nav-menu .signup-btn,
 .nav-menu .login-btn {
-    margin-left: 0.8rem;
+    margin-left: 0.4rem;
 }
 
 /* Dropdown Styles */
@@ -148,24 +149,34 @@
     text-align: center;
 }
 
-/* Login Button */
+/* Auth Buttons */
+.signup-btn,
 .login-btn {
-    padding: 0.6rem 1.5rem;
-    border-radius: 25px;
+    padding: 0.45rem 0.9rem;
+    border-radius: 20px;
     border: none;
-    background: #3498db;
-    color: white;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.signup-btn {
+    background: transparent;
+    color: #4f46e5;
+    border: 2px solid #4f46e5;
+}
+
+.signup-btn:hover {
+    background: #4f46e5;
+    color: white;
+    transform: translateY(-2px);
 }
 
 .login-btn {
-    padding: 0.45rem 0.9rem; /* slimmer */
-    border-radius: 20px;
     background: linear-gradient(90deg, #4f46e5, #6d28d9);
+    color: white;
     box-shadow: 0 2px 8px rgba(79, 70, 229, 0.12);
-    margin-left: 0.6rem;
 }
 
 .login-btn:hover {

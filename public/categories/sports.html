@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports & Coaching - PIN-Kings</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/category.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>PIN-Kings</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/search.html" class="nav-link">Find Coaches</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/create-event.html" class="nav-link">Create Event</a>
+                </li>
+            </ul>
+            <div class="nav-auth">
+                <a href="#" class="signup-btn">Sign Up</a>
+                <a href="#" class="login-btn">Login</a>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="category-hero sports-hero">
+        <div class="container">
+            <h1>🏃 Sports & Coaching</h1>
+            <p>Elevate your athletic performance with world-class coaches and training programs</p>
+            <div class="category-stats">
+                <div class="stat-item">
+                    <span class="stat-number">300+</span>
+                    <span class="stat-label">Pro Coaches</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Athletes Trained</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">85%</span>
+                    <span class="stat-label">Performance Improvement</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section class="leaderboard-section">
+        <div class="container">
+            <div class="leaderboard-header">
+                <h2>🏆 Top Athletic Performance Coaches</h2>
+                <p>Elite coaches who have trained champions and transformed athletes</p>
+            </div>
+
+            <div class="leaderboard-tabs">
+                <button class="tab-btn active" data-tab="overall">Overall</button>
+                <button class="tab-btn" data-tab="team-sports">Team Sports</button>
+                <button class="tab-btn" data-tab="individual">Individual</button>
+                <button class="tab-btn" data-tab="fitness">Fitness</button>
+            </div>
+
+            <div class="leaderboard-table" id="overall-tab">
+                <div class="leaderboard-row">
+                    <div class="rank first">1</div>
+                    <div class="coach-info">
+                        <img src="/images/coach-david.jpg" alt="David Martinez" class="coach-avatar">
+                        <div class="coach-details">
+                            <h4>David Martinez</h4>
+                            <p class="coach-specialty">Tennis & Racquet Sports</p>
+                        </div>
+                    </div>
+                    <div class="medal-tier">
+                        <img src="/images/crown-medal.svg" alt="Crown" class="medal-icon">
+                        <span>Crown King</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.98</span>
+                    </div>
+                    <div class="points">10,500</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank second">2</div>
+                    <div class="coach-info">
+                        <img src="/images/coach-rachel.jpg" alt="Rachel Kim" class="coach-avatar">
+                        <div class="coach-details">
+                            <h4>Rachel Kim</h4>
+                            <p class="coach-specialty">Olympic Swimming Coach</p>
+                        </div>
+                    </div>
+                    <div class="medal-tier">
+                        <img src="/images/gold-medal.svg" alt="Gold" class="medal-icon">
+                        <span>Gold</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.96</span>
+                    </div>
+                    <div class="points">10,200</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank third">3</div>
+                    <div class="coach-info">
+                        <img src="/images/coach-marcus.jpg" alt="Marcus Johnson" class="coach-avatar">
+                        <div class="coach-details">
+                            <h4>Marcus Johnson</h4>
+                            <p class="coach-specialty">Basketball Performance</p>
+                        </div>
+                    </div>
+                    <div class="medal-tier">
+                        <img src="/images/gold-medal.svg" alt="Gold" class="medal-icon">
+                        <span>Gold</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.94</span>
+                    </div>
+                    <div class="points">9,980</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">4</div>
+                    <div class="coach-info">
+                        <img src="/images/coach-sofia.jpg" alt="Sofia Rodriguez" class="coach-avatar">
+                        <div class="coach-details">
+                            <h4>Sofia Rodriguez</h4>
+                            <p class="coach-specialty">Soccer & Football Training</p>
+                        </div>
+                    </div>
+                    <div class="medal-tier">
+                        <img src="/images/gold-medal.svg" alt="Gold" class="medal-icon">
+                        <span>Gold</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.92</span>
+                    </div>
+                    <div class="points">9,750</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">5</div>
+                    <div class="coach-info">
+                        <img src="/images/coach-tony.jpg" alt="Tony Chen" class="coach-avatar">
+                        <div class="coach-details">
+                            <h4>Tony Chen</h4>
+                            <p class="coach-specialty">Martial Arts & Self Defense</p>
+                        </div>
+                    </div>
+                    <div class="medal-tier">
+                        <img src="/images/silver-medal.svg" alt="Silver" class="medal-icon">
+                        <span>Silver</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.90</span>
+                    </div>
+                    <div class="points">9,520</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Programs Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2>🎯 Featured Training Programs</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>🏃‍♂️ Speed & Agility</h3>
+                    <p>Improve your speed, agility, and reaction time with scientifically-proven training methods used by professional athletes.</p>
+                    <a href="#" class="btn btn-outline">Start Training</a>
+                </div>
+                <div class="content-card">
+                    <h3>💪 Strength Building</h3>
+                    <p>Build functional strength and power with progressive training programs tailored to your sport and goals.</p>
+                    <a href="#" class="btn btn-outline">Build Strength</a>
+                </div>
+                <div class="content-card">
+                    <h3>🧠 Mental Performance</h3>
+                    <p>Develop mental toughness, focus, and confidence through sports psychology and visualization techniques.</p>
+                    <a href="#" class="btn btn-outline">Train Your Mind</a>
+                </div>
+                <div class="content-card">
+                    <h3>🏥 Injury Prevention</h3>
+                    <p>Learn proper warm-up routines, mobility exercises, and injury prevention strategies to stay in the game.</p>
+                    <a href="#" class="btn btn-outline">Stay Healthy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports News & Updates -->
+    <section class="content-section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2>📰 Latest Sports Updates</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>🏆 Championship Training Tips</h3>
+                    <p>Learn from recent championship winners about their training secrets and mental preparation strategies.</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="background: #e3f2fd; color: #1976d2; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Featured</span>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h3>🔬 Sports Science Breakthroughs</h3>
+                    <p>Discover the latest research in sports performance, nutrition, and recovery that can transform your training.</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="background: #e8f5e8; color: #2e7d32; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">New Research</span>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h3>🥇 Athlete Success Stories</h3>
+                    <p>Read inspiring stories of athletes who overcame challenges and achieved their dreams with our coaching platform.</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="background: #fff3e0; color: #f57c00; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Inspiring</span>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h3>🍎 Nutrition for Athletes</h3>
+                    <p>Master the fundamentals of sports nutrition with meal plans and supplements recommended by pro coaches.</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="background: #f3e5f5; color: #7b1fa2; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.9rem;">Essential</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <h2>🛠️ Athletic Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-item">
+                    <div class="resource-icon">📊</div>
+                    <h4>Performance Analytics</h4>
+                    <p>Track your progress with advanced analytics and performance monitoring tools.</p>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">🎥</div>
+                    <h4>Technique Videos</h4>
+                    <p>Learn proper form and technique with slow-motion analysis and expert breakdowns.</p>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">🏋️</div>
+                    <h4>Equipment Guides</h4>
+                    <p>Get recommendations for the best training equipment for your sport and budget.</p>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">📅</div>
+                    <h4>Training Schedules</h4>
+                    <p>Access proven training schedules and periodization plans for peak performance.</p>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">👥</div>
+                    <h4>Team Building</h4>
+                    <p>Resources for coaches on team dynamics, leadership, and group motivation.</p>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">🎯</div>
+                    <h4>Goal Setting</h4>
+                    <p>Set SMART goals and create actionable plans to achieve your athletic objectives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="content-section" style="background: white;">
+        <div class="container" style="text-align: center;">
+            <h2>Ready to Reach Your Athletic Peak?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Train with elite coaches and unlock your full potential</p>
+            <a href="/search.html?category=sports" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Find Your Sports Coach</a>
+        </div>
+    </section>
+
+    <script src="/js/main.js"></script>
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-btn');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -62,17 +62,37 @@ function initTopCoachesCarousel() {
 
     $carousel.owlCarousel({
         loop: true,
-        margin: 16,
+        margin: 25,
         nav: true,
         dots: false,
         autoplay: false,
         navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
         responsive: {
-            0: { items: 1 },
-            480: { items: 2 },
-            768: { items: 3 },
-            992: { items: 4 },
-            1200: { items: 5 }
+            0: { 
+                items: 1,
+                nav: true,
+                margin: 15
+            },
+            480: { 
+                items: 2,
+                nav: true,
+                margin: 20
+            },
+            768: { 
+                items: 3,
+                nav: true,
+                margin: 20
+            },
+            992: { 
+                items: 4,
+                nav: true,
+                margin: 25
+            },
+            1200: { 
+                items: 4,
+                nav: true,
+                margin: 30
+            }
         }
     });
 }

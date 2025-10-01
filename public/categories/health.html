@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Wellbeing Coaches - PIN-Kings</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/category.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>PIN-Kings</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/search.html" class="nav-link">Find Coaches</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/create-event.html" class="nav-link">Create Event</a>
+                </li>
+            </ul>
+            <div class="nav-auth">
+                <a href="#" class="signup-btn">Sign Up</a>
+                <a href="#" class="login-btn">Login</a>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="category-hero health-hero">
+        <div class="container">
+            <h1>❤️ Health & Wellbeing</h1>
+            <p>Transform your life with expert wellness coaches, fitness trainers, and mindfulness mentors</p>
+            <div class="category-stats">
+                <div class="stat-item">
+                    <span class="stat-number">250+</span>
+                    <span class="stat-label">Active Coaches</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15K+</span>
+                    <span class="stat-label">Success Stories</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.9★</span>
+                    <span class="stat-label">Average Rating</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section class="leaderboard-section">
+        <div class="container">
+            <div class="leaderboard-header">
+                <h2>🏆 Top Health & Wellness Coaches</h2>
+                <p>Our highest-rated coaches leading the wellness revolution</p>
+            </div>
+
+            <div class="leaderboard-tabs">
+                <button class="tab-btn active" data-tab="overall">Overall</button>
+                <button class="tab-btn" data-tab="fitness">Fitness</button>
+                <button class="tab-btn" data-tab="nutrition">Nutrition</button>
+                <button class="tab-btn" data-tab="mental">Mental Health</button>
+            </div>
+
+            <div class="leaderboard-table" id="overall-tab">
+                <div class="leaderboard-row">
+                    <div class="rank first">1</div>
+                    <div class="coach-info">
+                        <img src="/images/coach-sarah.jpg" alt="Dr. Sarah Johnson" class="coach-avatar">
+                        <div class="coach-details">
+                            <h4>Dr. Sarah Johnson</h4>
+                            <p class="coach-specialty">Holistic Wellness Expert</p>
+                        </div>
+                    </div>
+                    <div class="medal-tier">
+                        <img src="/images/crown-medal.svg" alt="Crown" class="medal-icon">
+                        <span>Crown King</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.98</span>
+                    </div>
+                    <div class="points">9,850</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank second">2</div>
+                    <div class="coach-info">
+                        <img src="/images/coach-mike.jpg" alt="Mike Anderson" class="coach-avatar">
+                        <div class="coach-details">
+                            <h4>Mike Anderson</h4>
+                            <p class="coach-specialty">Fitness & Strength Training</p>
+                        </div>
+                    </div>
+                    <div class="medal-tier">
+                        <img src="/images/gold-medal.svg" alt="Gold" class="medal-icon">
+                        <span>Gold</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.96</span>
+                    </div>
+                    <div class="points">9,650</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank third">3</div>
+                    <div class="coach-info">
+                        <img src="/images/coach-lisa.jpg" alt="Lisa Chen" class="coach-avatar">
+                        <div class="coach-details">
+                            <h4>Lisa Chen</h4>
+                            <p class="coach-specialty">Yoga & Mindfulness</p>
+                        </div>
+                    </div>
+                    <div class="medal-tier">
+                        <img src="/images/gold-medal.svg" alt="Gold" class="medal-icon">
+                        <span>Gold</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.94</span>
+                    </div>
+                    <div class="points">9,420</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">4</div>
+                    <div class="coach-info">
+                        <img src="/images/coach-david.jpg" alt="Dr. David Park" class="coach-avatar">
+                        <div class="coach-details">
+                            <h4>Dr. David Park</h4>
+                            <p class="coach-specialty">Nutrition & Diet Planning</p>
+                        </div>
+                    </div>
+                    <div class="medal-tier">
+                        <img src="/images/gold-medal.svg" alt="Gold" class="medal-icon">
+                        <span>Gold</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.92</span>
+                    </div>
+                    <div class="points">9,180</div>
+                </div>
+
+                <div class="leaderboard-row">
+                    <div class="rank">5</div>
+                    <div class="coach-info">
+                        <img src="/images/coach-anna.jpg" alt="Anna Rodriguez" class="coach-avatar">
+                        <div class="coach-details">
+                            <h4>Anna Rodriguez</h4>
+                            <p class="coach-specialty">Mental Health & Therapy</p>
+                        </div>
+                    </div>
+                    <div class="medal-tier">
+                        <img src="/images/silver-medal.svg" alt="Silver" class="medal-icon">
+                        <span>Silver</span>
+                    </div>
+                    <div class="rating">
+                        <span class="stars">★★★★★</span>
+                        <span>4.90</span>
+                    </div>
+                    <div class="points">8,950</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wellness Tips Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2>💡 Wellness Tips & Insights</h2>
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3>🏃‍♂️ Daily Movement</h3>
+                    <p>Discover simple ways to incorporate movement into your daily routine, even with a busy schedule. Small changes can lead to big results.</p>
+                    <a href="#" class="btn btn-outline">Read More</a>
+                </div>
+                <div class="content-card">
+                    <h3>🥗 Mindful Eating</h3>
+                    <p>Learn the principles of mindful eating and how to build a healthy relationship with food that nourishes both body and mind.</p>
+                    <a href="#" class="btn btn-outline">Read More</a>
+                </div>
+                <div class="content-card">
+                    <h3>😌 Stress Management</h3>
+                    <p>Master proven techniques for managing stress and anxiety, including breathing exercises, meditation, and lifestyle changes.</p>
+                    <a href="#" class="btn btn-outline">Read More</a>
+                </div>
+                <div class="content-card">
+                    <h3>💤 Better Sleep</h3>
+                    <p>Optimize your sleep quality with evidence-based strategies for better rest, recovery, and overall health.</p>
+                    <a href="#" class="btn btn-outline">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <h2>🎯 Wellness Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-item">
+                    <div class="resource-icon">📊</div>
+                    <h4>Fitness Trackers</h4>
+                    <p>Monitor your progress with recommended fitness tracking apps and wearable devices.</p>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">🥘</div>
+                    <h4>Meal Planning</h4>
+                    <p>Access meal planning templates, healthy recipes, and nutrition guides from our experts.</p>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">🧘</div>
+                    <h4>Meditation Apps</h4>
+                    <p>Discover the best meditation and mindfulness apps recommended by our coaches.</p>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">📚</div>
+                    <h4>Health Library</h4>
+                    <p>Browse our curated collection of health and wellness books, articles, and research.</p>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">👥</div>
+                    <h4>Community Groups</h4>
+                    <p>Join local wellness groups and online communities for support and motivation.</p>
+                </div>
+                <div class="resource-item">
+                    <div class="resource-icon">🎯</div>
+                    <h4>Goal Setting</h4>
+                    <p>Use our goal-setting frameworks and tracking tools to achieve your wellness objectives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="content-section" style="background: white;">
+        <div class="container" style="text-align: center;">
+            <h2>Ready to Start Your Wellness Journey?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Connect with top-rated health coaches and transform your life today</p>
+            <a href="/search.html?category=health" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Find Your Coach</a>
+        </div>
+    </section>
+
+    <script src="/js/main.js"></script>
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-btn');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Here you would typically load different leaderboard data
+                    // For now, we'll just show the same data
+                });
+            });
+        });
+    </script>
+</body>
+</html>

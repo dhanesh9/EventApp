@@ -26,20 +26,10 @@ N<!DOCTYPE html>
         <div class="nav-container">
             <div class="nav-menu" id="nav-menu">
                 <a href="/" class="nav-link active">Home</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link">Explore <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="/search.html?category=health" class="dropdown-item"><i class="fas fa-heart"></i> Health & Wellbeing</a>
-                        <a href="/search.html?category=tech" class="dropdown-item"><i class="fas fa-microchip"></i> Tech & Innovation</a>
-                        <a href="/search.html?category=sports" class="dropdown-item"><i class="fas fa-running"></i> Sports & Coaching</a>
-                        <a href="/search.html?category=arts" class="dropdown-item"><i class="fas fa-palette"></i> Arts & Creativity</a>
-                        <a href="/search.html?category=growth" class="dropdown-item"><i class="fas fa-seedling"></i> Personal Growth</a>
-                        <a href="/search.html?category=business" class="dropdown-item"><i class="fas fa-briefcase"></i> Business & Networking</a>
-                    </div>
-                </div>
                 <a href="/become-coach.html" class="nav-link">Become a Coach</a>
                 <a href="/my-activities.html" class="nav-link">My Activities</a>
                 <a href="/shortlist.html" class="nav-link"><i class="fas fa-bookmark"></i> Shortlist</a>
+                <button class="btn btn-outline signup-btn">Sign Up</button>
                 <button class="btn btn-primary login-btn">Login</button>
             </div>
             <div class="nav-toggle" id="nav-toggle">
@@ -57,14 +47,14 @@ N<!DOCTYPE html>
             <h1>What do you want to learn today? 👑</h1>
             <div class="search-container">
                 <div class="search-pill">
-                    <select id="category-dropdown" class="search-category-dropdown">
-                        <option value="">Browse Categories</option>
-                        <option value="health">Health & Wellbeing</option>
-                        <option value="tech">Tech & Innovation</option>
-                        <option value="sports">Sports & Coaching</option>
-                        <option value="arts">Arts & Creativity</option>
-                        <option value="growth">Personal Growth</option>
-                        <option value="business">Business & Networking</option>
+                    <select id="category-dropdown" class="search-category-dropdown" onchange="handleCategorySelection(this.value)">
+                        <option value="">Categories</option>
+                        <option value="health">❤️ Health & Wellbeing</option>
+                        <option value="tech">💻 Tech & Innovation</option>
+                        <option value="sports">🏃 Sports & Coaching</option>
+                        <option value="arts">🎨 Arts & Creativity</option>
+                        <option value="growth">🌱 Personal Growth</option>
+                        <option value="business">💼 Business & Networking</option>
                     </select>
                     <input type="text" id="search-input" class="expandable-search" placeholder="gym trainer, yoga, guitar, python, public speaking...">
                     <input type="text" id="location-input" placeholder="Enter Pin Code">
@@ -79,49 +69,121 @@ N<!DOCTYPE html>
                 <h2>Top Rated Coaches Near You</h2>
                 <div class="coach-carousel owl-carousel owl-theme">
                     <!-- 10 Example Coaches (showing category in .specialty) -->
-                    <div class="coach-card">
-                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Coach Mike"><div class="rating"><i class="fas fa-star"></i><span>4.9</span></div></div>
-                        <div class="coach-info"><h3>Mike Anderson</h3><p class="specialty">Fitness</p><div class="badges"><span class="badge"><i class="fas fa-medal"></i> Elite</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</p></div>
+                    <div class="coach-card" onclick="window.location.href='/profiles/mike-anderson.html'" style="cursor: pointer;">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Coach Mike"></div>
+                        <div class="coach-info">
+                            <h3>Mike Anderson</h3>
+                            <div class="badges-rating">
+                                <span class="badge"><i class="fas fa-medal"></i> Elite</span>
+                                <div class="coach-rating"><i class="fas fa-star"></i><span>4.9</span></div>
+                            </div>
+                            <p class="specialty">Fitness</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</p>
+                        </div>
                     </div>
 
-                    <div class="coach-card">
-                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Coach Emily"><div class="rating"><i class="fas fa-star"></i><span>4.8</span></div></div>
-                        <div class="coach-info"><h3>Emily Chen</h3><p class="specialty">Tech</p><div class="badges"><span class="badge"><i class="fas fa-award"></i> Top Rated</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> Palo Alto, CA</p></div>
+                    <div class="coach-card" onclick="window.location.href='/profiles/emily-chen.html'" style="cursor: pointer;">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Coach Emily"></div>
+                        <div class="coach-info">
+                            <h3>Emily Chen</h3>
+                            <div class="badges-rating">
+                                <span class="badge"><i class="fas fa-award"></i> Top Rated</span>
+                                <div class="coach-rating"><i class="fas fa-star"></i><span>4.8</span></div>
+                            </div>
+                            <p class="specialty">Tech</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Palo Alto, CA</p>
+                        </div>
                     </div>
 
-                    <div class="coach-card">
-                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Coach David"><div class="rating"><i class="fas fa-star"></i><span>4.9</span></div></div>
-                        <div class="coach-info"><h3>David Martinez</h3><p class="specialty">Tennis</p><div class="badges"><span class="badge"><i class="fas fa-shield-alt"></i> Pro</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> Los Angeles, CA</p></div>
+                    <div class="coach-card" onclick="window.location.href='/profiles/david-martinez.html'" style="cursor: pointer;">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Coach David"></div>
+                        <div class="coach-info">
+                            <h3>David Martinez</h3>
+                            <div class="badges-rating">
+                                <span class="badge"><i class="fas fa-shield-alt"></i> Pro</span>
+                                <div class="coach-rating"><i class="fas fa-star"></i><span>4.9</span></div>
+                            </div>
+                            <p class="specialty">Tennis</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Los Angeles, CA</p>
+                        </div>
                     </div>
 
-                    <div class="coach-card">
-                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Coach Sarah"><div class="rating"><i class="fas fa-star"></i><span>4.7</span></div></div>
-                        <div class="coach-info"><h3>Sarah Williams</h3><p class="specialty">Yoga</p><div class="badges"><span class="badge"><i class="fas fa-medal"></i> Elite</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> Santa Monica, CA</p></div>
+                    <div class="coach-card" onclick="window.location.href='/profiles/sarah-williams.html'" style="cursor: pointer;">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Coach Sarah"></div>
+                        <div class="coach-info">
+                            <h3>Sarah Williams</h3>
+                            <div class="badges-rating">
+                                <span class="badge"><i class="fas fa-medal"></i> Elite</span>
+                                <div class="coach-rating"><i class="fas fa-star"></i><span>4.7</span></div>
+                            </div>
+                            <p class="specialty">Yoga</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Santa Monica, CA</p>
+                        </div>
                     </div>
 
-                    <div class="coach-card">
-                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Coach John"><div class="rating"><i class="fas fa-star"></i><span>4.8</span></div></div>
-                        <div class="coach-info"><h3>John Peterson</h3><p class="specialty">Business</p><div class="badges"><span class="badge"><i class="fas fa-award"></i> Top Rated</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> San Jose, CA</p></div>
+                    <div class="coach-card" onclick="alert('Profile coming soon!')" style="cursor: pointer;">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Coach John"></div>
+                        <div class="coach-info">
+                            <h3>John Peterson</h3>
+                            <div class="badges-rating">
+                                <span class="badge"><i class="fas fa-award"></i> Top Rated</span>
+                                <div class="coach-rating"><i class="fas fa-star"></i><span>4.8</span></div>
+                            </div>
+                            <p class="specialty">Business</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> San Jose, CA</p>
+                        </div>
                     </div>
 
-                    <div class="coach-card">
-                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/women/52.jpg" alt="Coach Lisa"><div class="rating"><i class="fas fa-star"></i><span>4.9</span></div></div>
-                        <div class="coach-info"><h3>Lisa Chang</h3><p class="specialty">Dance</p><div class="badges"><span class="badge"><i class="fas fa-shield-alt"></i> Pro</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> Berkeley, CA</p></div>
+                    <div class="coach-card" onclick="alert('Profile coming soon!')" style="cursor: pointer;">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/women/52.jpg" alt="Coach Lisa"></div>
+                        <div class="coach-info">
+                            <h3>Lisa Chang</h3>
+                            <div class="badges-rating">
+                                <span class="badge"><i class="fas fa-shield-alt"></i> Pro</span>
+                                <div class="coach-rating"><i class="fas fa-star"></i><span>4.9</span></div>
+                            </div>
+                            <p class="specialty">Dance</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Berkeley, CA</p>
+                        </div>
                     </div>
 
-                    <div class="coach-card">
-                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Coach Robert"><div class="rating"><i class="fas fa-star"></i><span>4.8</span></div></div>
-                        <div class="coach-info"><h3>Robert Wilson</h3><p class="specialty">Life Coaching</p><div class="badges"><span class="badge"><i class="fas fa-medal"></i> Elite</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> Palo Alto, CA</p></div>
+                    <div class="coach-card" onclick="alert('Profile coming soon!')" style="cursor: pointer;">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Coach Robert"></div>
+                        <div class="coach-info">
+                            <h3>Robert Wilson</h3>
+                            <div class="badges-rating">
+                                <span class="badge"><i class="fas fa-medal"></i> Elite</span>
+                                <div class="coach-rating"><i class="fas fa-star"></i><span>4.8</span></div>
+                            </div>
+                            <p class="specialty">Life Coaching</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Palo Alto, CA</p>
+                        </div>
                     </div>
 
-                    <div class="coach-card">
-                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/women/62.jpg" alt="Coach Maria"><div class="rating"><i class="fas fa-star"></i><span>4.9</span></div></div>
-                        <div class="coach-info"><h3>Maria Rodriguez</h3><p class="specialty">Language</p><div class="badges"><span class="badge"><i class="fas fa-award"></i> Top Rated</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> San Diego, CA</p></div>
+                    <div class="coach-card" onclick="alert('Profile coming soon!')" style="cursor: pointer;">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/women/62.jpg" alt="Coach Maria"></div>
+                        <div class="coach-info">
+                            <h3>Maria Rodriguez</h3>
+                            <div class="badges-rating">
+                                <span class="badge"><i class="fas fa-award"></i> Top Rated</span>
+                                <div class="coach-rating"><i class="fas fa-star"></i><span>4.9</span></div>
+                            </div>
+                            <p class="specialty">Language</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> San Diego, CA</p>
+                        </div>
                     </div>
 
-                    <div class="coach-card">
-                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/92.jpg" alt="Coach James"><div class="rating"><i class="fas fa-star"></i><span>4.7</span></div></div>
-                        <div class="coach-info"><h3>James Thompson</h3><p class="specialty">Basketball</p><div class="badges"><span class="badge"><i class="fas fa-shield-alt"></i> Pro</span></div><p class="location"><i class="fas fa-map-marker-alt"></i> Sacramento, CA</p></div>
+                    <div class="coach-card" onclick="alert('Profile coming soon!')" style="cursor: pointer;">
+                        <div class="coach-image"><img src="https://randomuser.me/api/portraits/men/92.jpg" alt="Coach James"></div>
+                        <div class="coach-info">
+                            <h3>James Thompson</h3>
+                            <div class="badges-rating">
+                                <span class="badge"><i class="fas fa-shield-alt"></i> Pro</span>
+                                <div class="coach-rating"><i class="fas fa-star"></i><span>4.7</span></div>
+                            </div>
+                            <p class="specialty">Basketball</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> Sacramento, CA</p>
+                        </div>
                     </div>
 
                 </div>
@@ -155,29 +217,29 @@ N<!DOCTYPE html>
         <div class="container">
             <h2>Popular Categories</h2>
             <div class="category-grid">
-                <div class="category-card" data-category="technology">
+                <div class="category-card" data-category="health" onclick="window.location.href='/categories/health.html'">
+                    <i class="fas fa-heart"></i>
+                    <h3>Health & Wellbeing</h3>
+                </div>
+                <div class="category-card" data-category="tech" onclick="window.location.href='/categories/tech.html'">
                     <i class="fas fa-laptop-code"></i>
-                    <h3>Technology</h3>
+                    <h3>Tech & Innovation</h3>
                 </div>
-                <div class="category-card" data-category="business">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>Business</h3>
-                </div>
-                <div class="category-card" data-category="arts">
-                    <i class="fas fa-palette"></i>
-                    <h3>Arts & Culture</h3>
-                </div>
-                <div class="category-card" data-category="sports">
+                <div class="category-card" data-category="sports" onclick="window.location.href='/categories/sports.html'">
                     <i class="fas fa-running"></i>
-                    <h3>Sports & Fitness</h3>
+                    <h3>Sports & Coaching</h3>
                 </div>
-                <div class="category-card" data-category="food">
-                    <i class="fas fa-utensils"></i>
-                    <h3>Food & Drink</h3>
+                <div class="category-card" data-category="arts" onclick="window.location.href='/categories/arts.html'">
+                    <i class="fas fa-palette"></i>
+                    <h3>Arts & Creativity</h3>
                 </div>
-                <div class="category-card" data-category="music">
-                    <i class="fas fa-music"></i>
-                    <h3>Music</h3>
+                <div class="category-card" data-category="growth" onclick="window.location.href='/categories/growth.html'">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Personal Growth</h3>
+                </div>
+                <div class="category-card" data-category="business" onclick="window.location.href='/categories/business.html'">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Business & Networking</h3>
                 </div>
             </div>
         </div>
